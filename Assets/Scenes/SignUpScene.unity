@@ -1423,7 +1423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: Confirm Password
 --- !u!222 &450090797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1717,7 +1717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username / Email
+  m_Text: Mobile No
 --- !u!222 &661709483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1797,7 +1797,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username / Email
+  m_Text: Username
 --- !u!222 &711675746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1824,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &750011786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2527,7 +2527,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Username / Email
+  m_Text: Username
 --- !u!222 &1073845832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2701,7 +2701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1200928039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2762,7 +2762,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1200928041}
   m_OnClick:
     m_PersistentCalls:
@@ -3024,8 +3024,8 @@ MonoBehaviour:
   LogInFailureScreen: {fileID: 190180754}
   LogInSuccessScreen: {fileID: 2126546689}
   SignUpButton: {fileID: 750011785}
-  RegisterButton: {fileID: 1200928038}
   SignUpScreen: {fileID: 1851024304}
+  RegisterButton: {fileID: 1200928038}
   Alert: {fileID: 0}
 --- !u!1 &1421662993
 GameObject:

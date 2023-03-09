@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Setup : MonoBehaviour
 {
     public InputField OwnerName, OwnerPassword, GameName;
     public InputField SignUpUserName, SignUpMobileNumber, SignUpPassword, SignUpConfirmPassword;
-    public GameObject LogInFailureScreen, LogInSuccessScreen, SignUpButton, RegisterButton, SignUpScreen;
+    public GameObject LogInFailureScreen, LogInSuccessScreen, SignUpButton, SignUpScreen;
+    public Button RegisterButton;
     public GameObject Alert;
 
     public static Setup instance;
     private void Awake()
     {
         instance = this;
-        SignUpButton.SetActive(false);
+        //SignUpButton.SetActive(false);
     }
 
     public void SignIn()
@@ -40,7 +42,11 @@ public class Setup : MonoBehaviour
         string ConfirmPassord = SignUpConfirmPassword.textComponent.text;
         if (!(string.IsNullOrEmpty(Password)) && !(string.IsNullOrEmpty(ConfirmPassord)) && Password == ConfirmPassord)
         {
-            RegisterButton.SetActive(true);
+            RegisterButton.interactable = true;
+        }
+        else
+        {
+            RegisterButton.interactable = false;
         }
     }
 
@@ -92,9 +98,10 @@ public class Setup : MonoBehaviour
     {
         //gameObject.SetActive(false);
         SignUpScreen.SetActive(false);
-        SignUpButton.SetActive(false);
-        RegisterButton.SetActive(false);
-        LogInSuccessScreen.SetActive(true);
+        //SignUpButton.SetActive(false);
+        RegisterButton.interactable = false;
+        //LogInSuccessScreen.SetActive(true);
+        LoadNextScene();
         PlayerPrefs.SetInt("LoggedIn", 1);
     }
 
@@ -103,5 +110,10 @@ public class Setup : MonoBehaviour
         //PlayerPrefs.SetInt("LoggedIn", 0);
         SignUpButton.SetActive(true);
         LogInFailureScreen.SetActive(true);
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
