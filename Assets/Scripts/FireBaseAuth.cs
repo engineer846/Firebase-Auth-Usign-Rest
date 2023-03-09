@@ -77,7 +77,7 @@ public class FireBaseAuth : MonoBehaviour
         SignUpUser(Account + "@auth.com", ownerName, password);
     }
 
-    public void SignInUserButton(string email, string ownerName, string password)
+    public void SignInUserButton(string email, string password)
     {
         Debug.Log("Account: " + email + " Password: " + password);
         SignInUser(Account + "@auth.com", password);
@@ -92,15 +92,15 @@ public class FireBaseAuth : MonoBehaviour
                 localId = response.localId;
                 response.PSWD = PlayerPrefs.GetString("RealPassword");
                 response.UserName = username;
-                //PlayerData pd = new PlayerData();
-                //signUpResponse = response;
-                //Debug.Log("Signed up Account: " + localId);
-                //PostToDatabase(pd, true);
+                if (Setup.instance != null)
+                    Setup.instance.LoggedInSuccess();
 
             }).Catch(error =>
             {
-                SignInUserButton(email, username, password);
-                Debug.Log("Sign in Account called: " + localId);
+
+                Setup.instance.LogInFailed();
+                //SignInUserButton(email, password);
+                //Debug.Log("Sign in Account called: " + localId);
                 Debug.Log(error);
             });
     }
